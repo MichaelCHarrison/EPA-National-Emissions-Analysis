@@ -9,10 +9,12 @@ plot3 <- function(){
                 summarise(totalEmissions = sum(Emissions))
         
         library(ggplot2)
-        ggplot(summary) + 
-                geom_point(aes(year, total_Emission), colour = type) +
-                geom_line(aes(year, total_Emission), colour = type)
+        ggplot(summary, aes(year, totalEmissions)) + 
+                geom_point(aes(colour = type)) +
+                geom_line(aes(colour = type)) +
+                labs(title = "Baltimore City Emissions by Type: 1999-2008",
+                     x = "Year", y = "Emissions (Tons)")
                 
         ggsave(filename = "plot3.png", device = "png", 
-                       width = 5, height = 5, units = "in")
+               width = 5, height = 5, units = "in")
 }

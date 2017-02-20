@@ -14,6 +14,10 @@ plot6 <- function(){
             height = 480,
             units = "px")
 
-
+        par(mfrow = c(1,2), mar = c(4,4,2,1))
+        with(subset(summary, fips = "06037"), plot(year, totalEmissions),
+              main = "Los Angeles")
+        mtext("Baltimore City vs. Los Angeles Emissions: 1999-2008")
+        
         
 }
