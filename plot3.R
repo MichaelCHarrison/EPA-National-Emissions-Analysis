@@ -9,5 +9,10 @@ plot3 <- function(){
                 summarise(totalEmissions = sum(Emissions))
         
         library(ggplot2)
-        qplot(year, totalEmissions, data = summary, color = type)
+        ggplot(summary) + 
+                geom_point(aes(year, total_Emission), colour = type) +
+                geom_line(aes(year, total_Emission), colour = type)
+                
+        ggsave(filename = "plot3.png", device = "png", 
+                       width = 5, height = 5, units = "in")
 }

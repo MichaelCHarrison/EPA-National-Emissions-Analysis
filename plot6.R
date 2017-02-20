@@ -9,11 +9,11 @@ plot6 <- function(){
                 group_by(fips, year) %>%
                 summarise(totalEmissions = sum(Emissions))
                 
-        ggplot(summary)  +
-                geom_point(aes(year, totalEmissions), size = 3) +
-                facet_grid(.~fips)
-        ggsave(filename = "plot6.png", device = "png",
-               width = 5, height = 5, unit = "in")
+        png("plot2.png",
+            width = 480,
+            height = 480,
+            units = "px")
+
 
         
 }
