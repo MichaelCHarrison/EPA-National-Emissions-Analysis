@@ -1,8 +1,8 @@
 plot5 <- function(){
+        library(dplyr)
         summary <- tbl_df(readRDS("summarySCC_PM25.rds"))
         classcodes <- readRDS("Source_Classification_Code.rds")
 
-        library(dplyr)
         summary <- summary %>%
                 group_by(year) %>%
                 subset(fips == "24510") %>%
